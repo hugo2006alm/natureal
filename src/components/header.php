@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cyberpunk">
+<html lang="en" data-theme="lofi">
 <head>
     <meta charset="UTF-8">
     <script>
@@ -13,6 +13,5 @@
     <title>NatuReal</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="min-w-screen min-h-screen">
-    <div class="w-screen bg-base-100 min-h-screen">
-        <?php include 'components/top_nav.php';?>
+<body class="min-w-screen min-h-screen bg-base-100">
+    <?php include 'components/top_nav.php';?>
