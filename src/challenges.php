@@ -1,158 +1,107 @@
-<?php include 'components/header.php';include '../src/include/config.inc.php';?>
+<?php
+include 'components/header.php';
 
-<?php 
-
-$_SESSION['user_name']='kodin';
-$_SESSION['user_id']= '1';
-
-if (!isset($_SESSION['user_name'])){
-    header('Location: '.$arrConfig['dir_site'].'/src/auth/login.php');
-    die();
-}
 
 $queryverificar = my_query('SELECT COUNT(*) AS total FROM posts WHERE iduser = '.$_SESSION['user_id']);
+include $arrConfig['dir_site'] . '/tarefas/pushtarefa.php';
 
-if ($queryverificar[0]['total']>0){
+$c=0;
+if ($queryverificar[0]['total']>2){
    $queryverificar2= my_query('SELECT * FROM posts WHERE iduser = '.$_SESSION['user_id']);
    for ($i=0; $i<$queryverificar[0]['total']; $i++){
        $data = $queryverificar2[$i]['data'];
        $data = substr($data, 0, 10);
        if ($data == date('Y-m-d')){
-           echo 'Você já postou hoje';
-          include 'components/footer.php';
-           die();
+            $c++;
+           
        }
    }
 
-
+   if ($c >2){
+    //echo 'Você já postou hoje';
+            include 'components/footer.php';
+           die();
+   }
 }
-
-
-include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
-
 ?>
 
-<div>
-    <h1>Objetivos do dia</h1><br>
+<div class="w-screen flex flex-col justify-center items-center">
+    <h1 class="text-primary text-4xl font-bold mt-6">Objetivos do dia</h1><br>
 
-    <script type="text/javascript">
-        document.eve
-    function getLocationConstant() {
-    
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-        } else {
-            alert("Your browser or device doesn't support Geolocation");
-        }
-    }
+    <?php
 
-    // If we have a successful location update
-    function onGeoSuccess(event) {
-      
-        document.getElementById("Posicao").value = event.coords.latitude + ", " + event.coords.longitude;
+        $query = my_query("SELECT * FROM tarefas WHERE dataparaaparecer= '".date('Y-m-d')."'");
+    ?>
 
-    }
+    <div class="stats stats-vertical shadow">
+        <div class="stat">
+            <div class="stat-figure text-primary">
+                <div class="avatar">
+                    <div class="w-16 rounded-sm">
+                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[0]['foto'] ?>" />
+                    </div>
+                </div>
+            </div>
+            <div class="stat-title">Objetivo #1 <div class="badge bg-grey-400">Normal</div></div>
+            <div class="stat-value text-primary"><?php echo $query[0]['titulo'] ?></div>
+            <div class="stat-desc"><?php echo $query[0]['nomeespecie'] ?></div>
+        </div>
 
-    // If something has gone wrong with the geolocation request
-    function onGeoError(event) {
-        alert("Error code " + event.code + ". " + event.message);
-    }
-</script>
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <div class="avatar">
+                    <div class="w-16 rounded-sm">
+                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[1]['foto'] ?>" />
+                    </div>
+                </div>
+            </div>
+            <div class="stat-title">Objetivo #2 <div class="badge bg-blue-400">Raro</div></div>
+            <div class="stat-value text-primary"><?php echo $query[1]['titulo'] ?></div>
+            <div class="stat-desc"><?php echo $query[1]['nomeespecie'] ?></div>
+        </div>
 
-<form action="./posts/trata_post.php" method="post" enctype="multipart/form-data">
-<input type="radio" name="objetivo" value="objetivo1" required>
-<label for="objetivo1"><?php echo $reply[0]['titulo'] ?></label><br>
-<img width="30%" src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[0]['foto'] ?>" alt="">
+        <div class="stat">
+            <div class="stat-figure text-secondary">
+                <div class="avatar">
+                    <div class="w-16 rounded-sm">
+                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[2]['foto'] ?>" />
+                    </div>
+                </div>
+            </div>
+            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400">Legendário</div></div>
+            <div class="stat-value text-primary"><?php echo $query[2]['titulo'] ?></div>
+            <div class="stat-desc"><?php echo $query[2]['nomeespecie'] ?></div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <form class="w-96 flex flex-col justify-center items-center [&>*]:mb-3 last:mb-0" action="posts/trata_post.php" method="post" enctype="multipart/form-data">
+            <h1 class="font-bold mb-2">Enviar Fotografia</h1>
+            <select required name="objetivo" class="select select-bordered w-full max-w-xs">
+                <option disabled selected>Selecione um Objetivo</option>
+                <option value="objetivo1">Objetivo #1 - <?php echo $query[0]['titulo'] ?></option>
+                <option value="objetivo2">Objetivo #2 - <?php echo $query[1]['titulo'] ?></option>
+                <option value="objetivo3">Objetivo #3 - <?php echo $query[2]['titulo'] ?></option>
+            </select>
 
-<input type="radio" name="objetivo" value="objetivo2">
-<label for="objetivo2"><?php echo $reply[1]['titulo'] ?></label><br>
-<img width="30%" src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[1]['foto'] ?>" alt="">
+            <?php
+                $reply = my_query("SELECT * FROM tarefas WHERE dataparaaparecer= '".date('Y-m-d')."'");
+            ?>
 
-<input type="radio" name="objetivo" value="objetivo3">
-<label for="objetivo3"><?php echo $reply[2]['titulo'] ?></label><br><br>
-<img width="30%" src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[2]['foto'] ?>" alt="">
+            <input type="hidden" name="idobjetivo1" value="<?php echo $reply[0]['id'] ?>">
+            <input type="hidden" name="idobjetivo2" value="<?php echo $reply[1]['id'] ?>">
+            <input type="hidden" name="idobjetivo3" value="<?php echo $reply[2]['id'] ?>">
+            <input type="hidden" id="Posicao" name="Posicao" value="indefinido">
 
-<input type="hidden" name="idobjetivo1" value="<?php echo $reply[0]['id'] ?>">
-<input type="hidden" name="idobjetivo2" value="<?php echo $reply[1]['id'] ?>">
-<input type="hidden" name="idobjetivo3" value="<?php echo $reply[2]['id'] ?>">
-<input type="hidden" id="Posicao" name="Posicao" value="indefinido">
+            <textarea name="descricao" class="textarea textarea-bordered w-full max-w-xs" placeholder="Descrição"></textarea>
 
-<label for="descricao">Descrição</label>
-<input type="text" name="descricao"><br><br>
+            <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="foto" required><br><br>
 
-
-<input type="file" name="foto" required><br><br>
-
-
-<button type="submit">Upload</button>
-
-</form>
+            <button class="btn btn-circle">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-upload"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 9l5 -5l5 5" /><path d="M12 4l0 12" /></svg>
+            </button>
+        </form>
+    </div>
 </div>
 
 
-$_SESSION['user_name']='kodin';
-$_SESSION['user_id']= '1';
-
-if (!isset($_SESSION['user_name'])){
-    header('Location: '.$arrConfig['dir_site'].'/src/auth/login.php');
-    die();
-}
-
-include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
-
-?>
-
-<div>
-    <h1>Objetivos do dia</h1><br>
-
-    <script type="text/javascript">
-        document.eve
-    function getLocationConstant() {
-    
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-        } else {
-            alert("Your browser or device doesn't support Geolocation");
-        }
-    }
-
-    // If we have a successful location update
-    function onGeoSuccess(event) {
-      
-        document.getElementById("Posicao").value = event.coords.latitude + ", " + event.coords.longitude;
-
-    }
-
-    // If something has gone wrong with the geolocation request
-    function onGeoError(event) {
-        alert("Error code " + event.code + ". " + event.message);
-    }
-</script>
-
-<form action="./posts/trata_post.php" method="post" enctype="multipart/form-data">
-<input type="radio" name="objetivo" value="objetivo1" required>
-<label for="objetivo1"><?php echo $reply[0]['titulo'] ?></label><br>
-
-<input type="radio" name="objetivo" value="objetivo2">
-<label for="objetivo2"><?php echo $reply[1]['titulo'] ?></label><br>
-
-<input type="radio" name="objetivo" value="objetivo3">
-<label for="objetivo3"><?php echo $reply[2]['titulo'] ?></label><br><br>
-
-<input type="hidden" name="idobjetivo1" value="<?php echo $reply[0]['id'] ?>">
-<input type="hidden" name="idobjetivo2" value="<?php echo $reply[1]['id'] ?>">
-<input type="hidden" name="idobjetivo3" value="<?php echo $reply[2]['id'] ?>">
-<input type="hidden" id="Posicao" name="Posicao" value="indefinido">
-
-<label for="descricao">Descrição</label>
-<input type="text" name="descricao"><br><br>
-
-
-<input type="file" name="foto" required><br><br>
-
-
-<button type="submit">Upload</button>
-
-</form>
-</div>
-<?php include 'components/footer.php';?>
+<?php include 'components/footer.php'; ?>

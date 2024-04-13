@@ -8,28 +8,7 @@
 // echo (basename($_SERVER['PHP_SELF']) == "index.php");
 // die();
 ?>
-<div class="z-10 fixed bottom-20 w-screen flex justify-center items-center">
-    <div class="flex gap-5 bg-base-100 rounded-md p-4">
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:10;"></span>
-            </span>
-            hours
-        </div>
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:24;"></span>
-            </span>
-            min
-        </div>
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:0;"></span>
-            </span>
-            sec
-        </div>
-    </div>
-</div>
+
 <div class="btm-nav bg-base-100 text-primary">
     <a href="index.php" <?php echo (basename($_SERVER['PHP_SELF']) == "index.php" || basename($_SERVER['PHP_SELF']) == "") ? 'class="active"' : ""; ?>>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home">
