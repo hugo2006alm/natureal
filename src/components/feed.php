@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -83,7 +83,7 @@
             </div>
         </div>
     </div> 
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -97,7 +97,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -125,7 +125,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -153,7 +153,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -181,7 +181,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">
@@ -195,7 +195,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
         <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
         <div class="card-body">
             <h2 class="card-title">

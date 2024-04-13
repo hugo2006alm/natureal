@@ -1858,6 +1858,10 @@ html {
   z-index: 1;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .inline {
   display: inline;
 }
@@ -1930,6 +1934,18 @@ html {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pr-0 {
+  padding-right: 0px;
 }
 
 .text-lg {
