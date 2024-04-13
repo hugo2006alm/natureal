@@ -273,25 +273,3 @@ function like(iduserr, idpostt){
         </div>
     </div>
 </div>
-<div class="z-10 fixed bottom-20 w-screen flex justify-center items-center">
-    <div class="flex gap-5 bg-base-100 rounded-md p-4">
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:10;"></span>
-            </span>
-            hours
-        </div>
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:24;"></span>
-            </span>
-            min
-        </div>
-        <div>
-            <span class="countdown font-mono text-3xl">
-                <span style="--value:0;"></span>
-            </span>
-            sec
-        </div>
-    </div>
-</div>
