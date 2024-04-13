@@ -1,15 +1,13 @@
 <?php
     include 'include/config.inc.php';
+    
+    $user_id = $_SESSION['user_id'];
+    $user = my_query("SELECT * FROM user WHERE id = " . $user_id);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
-            $user_id = $_SESSION['user_id'];
             $file_name = $_FILES['photo']['name'];
             $file_tmp = $_FILES['photo']['tmp_name'];
             $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-
-            
-
-
 
             // Segurança: Verificar os tipos de arquivo permitidos
             $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
@@ -28,11 +26,8 @@
             }
 
         }
-        my_query('UPDATE user SET username =  "'. $_POST['username'] .'" , nome = "'. $_POST['nome'] .'" WHERE id = '. $user_id,1 );
-       // header('Location: settings.php');
-    }else {
-        $user_id = $_SESSION['user_id'];
-        $user = my_query("SELECT * FROM user WHERE id = " . $user_id);
+        my_query('UPDATE user SET username =  "'. $_POST['username'] .'" , nome = "'. $_POST['nome'] .'" WHERE id = '. $user_id);
+        header('Location: settings.php');
     }
 ?>
 <!DOCTYPE html>

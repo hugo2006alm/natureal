@@ -1,4 +1,10 @@
-<?php include '../src/include/config.inc.php'; ?>
+<?php
+include 'include/config.inc.php'; 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ' . $arrConfig['url_site'] . '/auth/login.php');
+    die();
+} 
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
 <head>

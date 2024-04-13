@@ -1,15 +1,10 @@
 <?php
 include 'components/header.php';
 
-$_SESSION['user_name'] = 'kodin';
-$_SESSION['user_id'] = '1';
 
-if (!isset($_SESSION['user_name'])) {
-    header('Location: ' . $arrConfig['dir_site'] . '/auth/login.php');
-    die();
-}
-
+$queryverificar = my_query('SELECT COUNT(*) AS total FROM posts WHERE iduser = '.$_SESSION['user_id']);
 include $arrConfig['dir_site'] . '/tarefas/pushtarefa.php';
+
 
 if ($queryverificar[0]['total']>0){
    $queryverificar2= my_query('SELECT * FROM posts WHERE iduser = '.$_SESSION['user_id']);
@@ -18,11 +13,12 @@ if ($queryverificar[0]['total']>0){
        $data = substr($data, 0, 10);
        if ($data == date('Y-m-d')){
            echo 'Você já postou hoje';
-          include 'components/footer.php';
+            include 'components/footer.php';
            die();
        }
    }
-
+}
+?>
 
 <div class="w-screen flex flex-col justify-center items-center">
     <h1 class="text-primary text-4xl font-bold mt-6">Objetivos do dia</h1><br>
