@@ -2,11 +2,6 @@
 @session_start();
 global $arrConfig;
 
-if($_SERVER["HTTP_HOST"] == 'web.colgaia.local' || $_SERVER["HTTP_HOST"] == 'localhost' ){
-    error_reporting(E_ALL);
-} else {
-    error_reporting(0);
-};  
 
 $arrConfig['servername'] = 'sql.freedb.tech';
 $arrConfig['username'] = 'freedb_natureal';
