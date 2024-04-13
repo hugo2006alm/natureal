@@ -1,10 +1,10 @@
 <?php
 include '../include/config.inc.php';
-$target_dir = $arrConfig['dir_site']."/src/uploads/";
-$target_file = $target_dir . $_SESSION['user_id'].date('Y-m-d').'.png';
+$target_dir = $arrConfig['dir_site']."/uploads/";
+$target_file = $target_dir . $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].'.png';
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$nomeoriginal = $_SESSION['user_id'].date('Y-m-d').'.png';
+$nomeoriginal = $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].'.png';
 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <?php
@@ -65,12 +65,12 @@ if ($uploadOk == 0) {
  <script>
   let string = document.getElementById('response').innerHTML;
   console.log(string);
-  confidence(string);
+ /*  confidence(string);
 
   function confidence(stringg){
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/sessionconfidence.php",
+            url: "<?php echo $arrConfig['url_site'] ?>/posts/sessionconfidence.php",
             method: 'POST',
             data: { 
                     string: JSON.parse(stringg).confidence
@@ -86,20 +86,24 @@ if ($uploadOk == 0) {
            
         })
     }, 800)
-}
+} */
+
+//console.log("<?php echo $arrConfig['url_site'] ?>/posts/inserirpost?nomeoriginal=<?php echo $nomeoriginal ?>&descricao=<?php echo $_POST['descricao'] ?>&objetivo=<?php echo $_POST['objetivo'] ?>&Posicao=<?php echo $_POST['Posicao'] ?>&idobjetivo1=<?php echo $_POST['idobjetivo1'] ?>&idobjetivo2=<?php echo $_POST['idobjetivo2'] ?>&idobjetivo3=<?php echo $_POST['idobjetivo3'] ?>&string="+JSON.parse(string).confidence);
+
+window.location.replace("<?php echo $arrConfig['url_site'] ?>/posts/inserirpost.php?nomeoriginal=<?php echo $nomeoriginal ?>&descricao=<?php echo $_POST['descricao'] ?>&objetivo=<?php echo $_POST['objetivo'] ?>&Posicao=<?php echo $_POST['Posicao'] ?>&idobjetivo1=<?php echo $_POST['idobjetivo1'] ?>&idobjetivo2=<?php echo $_POST['idobjetivo2'] ?>&idobjetivo3=<?php echo $_POST['idobjetivo3'] ?>&string="+JSON.parse(string).confidence);
+
  </script>
 
  <?php
-    
-  if (floatval($_SESSION['confidence']) < 0.7){
-    echo "not a bird.";
-    die();
-  }
+
+
+
+  
    
 
-    include $arrConfig['dir_site'].'/src/posts/inserirpost.php';
+    
 
-    echo "The file ". htmlspecialchars( $_SESSION['user_id'].date('Y-m-d').'.png'). " has been uploaded.";
+   // echo "The file ". htmlspecialchars( $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].'.png'). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
   }

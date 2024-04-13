@@ -21,12 +21,12 @@
                         <?php
                         // echo $_SESSION['theme'];
                         ?>
-                        Theme
+                        Tema
                     </span>
                     <input id="theme" type="checkbox" value="forest" class="checkbox theme-controller"/>
                 </div>
             </li>
-            <li><a>Settings</a></li>
+            <li><a href="<?php echo $arrConfig['url_site'].'/settings.php' ?>">Definições</a></li>
         </ul>
     </div>
 </div>

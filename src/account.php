@@ -27,16 +27,12 @@ include 'components/header.php';
     <title>Perfil user</title>
 </head>
 <body>
-    <h2>Uutilizador: <?php echo $user[0]['username']; ?></h2>
+<h2>Nome: <?php echo $user[0]['nome']; ?></h2>
+    <h2>Utilizador: <?php echo $user[0]['username']; ?></h2>
+    
+    <h2>Email: <?php echo $user[0]['email']; ?></h2>
     <h2>FOTO:</h2>
-    <img src="../public/users_pfp/<?php echo $user[0]['foto']; ?>" alt="" style="max-width:100px">
-    <h1>POSTS:</h1>
-    <?php
-        for($i = 0; $i < count($posts); $i++){
-            //Qualquer cena para postar foto
-            echo ' <img src="../public/users_pfp/'.$posts[$i]['foto'].'" alt="">';
-        }
-
-    ?>
+    <img src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="" style="max-width:100px">
+    
 </body>
 <?php include 'components/footer.php';?>

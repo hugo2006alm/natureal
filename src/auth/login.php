@@ -11,10 +11,11 @@ include '../include/config.inc.php';
 <body>
     <form method="post" action="trata_login.auth.php">
         
-        <input type="text" name="login" id="login" placeholder="Email or Username" required>
+        <input type="text" name="login" id="login" placeholder="Email ou Username" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
         <input type="submit">
     </form>
+    <a href="registo.php">Registar</a>
     
 </body>
 </html>

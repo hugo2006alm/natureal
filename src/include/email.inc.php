@@ -102,7 +102,7 @@ function enviar_email($to, $nome, $assunto, $alt_body, $html){
         $mail->Password   = $pass;                        
         $mail->SMTPSecure = 'ssl';                              
         $mail->Port       = 465;       
-        $mail->setFrom( $user, 'Educse');           
+        $mail->setFrom( $user, 'NatuReal');           
         $mail->addAddress($to, $nome);                  
         $mail->isHTML(true);                                  
         $mail->Subject = $assunto;
