@@ -3,6 +3,7 @@
 $email = $_POST['email'];
 $user = $_POST['user'];
 $pass = $_POST['pass'];
+$nome = $_POST['nome'];
 $confirmar_pass = $_POST['confirmar_pass'];
 $pfp = 'default.png';
 
@@ -38,6 +39,7 @@ $pass = password_hash($pass, PASSWORD_DEFAULT); /* encriptar pass */
 
 $_SESSION['tmp_acc'] = array(
     'user' => $user,
+    'nome' => $nome,
     'email' => $email,
     'pass' => $pass,    
     'foto' => $pfp
@@ -48,4 +50,4 @@ $_SESSION['codigo'] = $codigo;
 
 email_verificacao($email, $user, $codigo);
 
-header('Location: ' . $arrConfig['url_paginas'] . 'auth/verificar_email.php');
+header('Location: ' . $arrConfig['url_auth'] . 'verificar_email.php');

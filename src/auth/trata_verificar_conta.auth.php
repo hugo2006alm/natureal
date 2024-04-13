@@ -12,12 +12,19 @@ $user = $_SESSION['tmp_acc']['user'];
 $email = $_SESSION['tmp_acc']['email'];
 $pass = $_SESSION['tmp_acc']['pass'];
 $pfp = $_SESSION['tmp_acc']['foto'];
+$nome = $_SESSION['tmp_acc']['nome'];
 
-$sql = "INSERT INTO user (username, email, password, pfp, ativo) VALUES ('$user', '$email', '$pass', '$pfp', 1)";
-my_query($sql);
+$sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
+$arrResultado = my_query($sql);
+if (count($arrResultado) != 0) { /* validar se já existe o user */
+    $sql = "INSERT INTO user (username, email, password, nome, foto) VALUES ('$user', '$email', '$pass', '$nome', '$pfp')";
+    my_query($sql);
+    
+    unset($_SESSION['tmp_acc']);
+    
+}
 
-unset($_SESSION['tmp_acc']);
-header('Location: ' . $arrConfig['url_paginas'] . 'auth/login.php');
+header('Location: ' . $arrConfig['url_auth'] . 'login.php');
 
 
 
