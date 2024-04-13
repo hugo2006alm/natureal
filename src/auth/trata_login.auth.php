@@ -30,10 +30,12 @@ if(count($res) == 0) {
     $_SESSION['user_id'] = $res[0]['id'];                
     $_SESSION['user_foto'] = $res[0]['foto'];
     echo json_encode(['status' => 'success', 'msg' => 'Login efetuado com sucesso']);
-    exit;
+    
 } else {
     echo json_encode(['status' => 'error', 'msg' => 'Credenciais incorretas']);
     exit;
 } 
+
+header('Location: ' . $arrConfig['url_site'] . '/src/index.php');
 
 
