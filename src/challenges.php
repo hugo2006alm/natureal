@@ -92,7 +92,7 @@ if ($queryverificar[0]['total']>2){
             <input type="hidden" name="idobjetivo3" value="<?php echo $reply[2]['id'] ?>">
             <input type="hidden" id="Posicao" name="Posicao" value="indefinido">
 
-            <textarea name="descricao" class="textarea textarea-bordered w-full max-w-xs" placeholder="Description"></textarea>
+            <textarea name="descricao" class="textarea textarea-bordered w-full max-w-xs" placeholder="Descrição"></textarea>
 
             <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="foto" required><br><br>
 
