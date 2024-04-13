@@ -72,4 +72,6 @@ include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
 
 
 
+<?php include 'components/feed.php';?>
+
 <?php include 'components/footer.php';?>
