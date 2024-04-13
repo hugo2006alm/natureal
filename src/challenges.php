@@ -36,7 +36,7 @@ include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
     <h1>Objetivos do dia</h1><br>
 
     <script type="text/javascript">
-        document.eve
+        
     function getLocationConstant() {
     
         if (navigator.geolocation) {
@@ -82,6 +82,7 @@ include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
 
 
 <input type="file" name="foto" required><br><br>
+
 
 
 <button type="submit">Upload</button>

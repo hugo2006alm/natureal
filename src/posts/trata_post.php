@@ -44,6 +44,7 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
     
+    
     include $arrConfig['dir_site'].'/src/posts/inserirpost.php';
 
     echo "The file ". htmlspecialchars( $_SESSION['user_id'].date('Y-m-d').'.png'). " has been uploaded.";
