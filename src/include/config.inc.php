@@ -18,12 +18,18 @@ $arrConfig['dir_modules'] = $arrConfig['dir_site'] . '/modules/';
 $arrConfig['url_admin'] = $arrConfig['url_site'] . '/admin/';
 $arrConfig['dir_admin'] = $arrConfig['dir_site'] . '/admin/';
 
-$arrConfig['url_components'] = $arrConfig['url_site'] . '/components/';
-$arrConfig['dir_components'] = $arrConfig['dir_site'] . '/components/';
+$arrConfig['dir_include'] = $arrConfig['dir_site'] . '/src/include/';
+=========
+
+$arrConfig['url_site'] = 'http://' . $_SERVER["HTTP_HOST"] . '/natureal';
+$arrConfig['dir_site'] = '/Applications/XAMPP/xamppfiles/htdocs/natureal'; 
+$arrConfig['url_components'] = $arrConfig['url_site'] . '/src/components/';
+$arrConfig['dir_components'] = $arrConfig['dir_site'] . '/src/components/';
 $arrConfig['dir_pfp'] = $arrConfig['dir_site'] . '/public/users_pfp/';
-$arrConfig['url_auth'] = $arrConfig['url_site'] . '/auth/';
+$arrConfig['url_auth'] = $arrConfig['url_site'] . '/src/auth/';
 
 
+>>>>>>>>> Temporary merge branch 2
 
 $arrConfig['email_token'] = 'aajbajkh%/rcKI!ª~uaca76';
 $arrConfig['key_jwt'] = 'r/FqiRRE';
