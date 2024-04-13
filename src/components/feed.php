@@ -24,7 +24,7 @@
             if ($likes_user[0]['idpost'] == $v['id']) {
                 echo '
         <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
-            <figure><img src="' . $img . '" alt="" /></figure>
+            <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
             <div class="card-body flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
@@ -48,7 +48,7 @@
             } else {
                 echo '
         <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
-            <figure><img src="' . $img . '" alt="" /></figure>
+            <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
             <div class="card-body flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
@@ -73,7 +73,7 @@
         } else {
             echo '
         <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
-            <figure><img src="' . $img . '" alt="" /></figure>
+            <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
             <div class="card-body flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
