@@ -1,4 +1,7 @@
-<?php include '../include/config.inc.php';
+<?php 
+ ini_set('display_errors', 1);
+ error_reporting(E_ALL);  
+include '../include/config.inc.php';
 
 $email = $_POST['email'];
 $user = $_POST['user'];
@@ -9,7 +12,7 @@ $pfp = 'default.png';
 
 if($pass != $confirmar_pass) { /* validar pass e confirmar */
     $_SESSION['erro'] = 'As passwords não coincidem';
-    header('Location: ' . $arrConfig['url_site'] . '/pages/auth/registo.php');
+    header('Location: registo.php');
     exit;
 }
 
@@ -17,21 +20,13 @@ $sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
 $arrResultado = my_query($sql);
 if (count($arrResultado) > 0) { /* validar se já existe o user */
     $_SESSION['erro'] = 'Utilizador já existe';
-    header('Location: ' . $arrConfig['url_site'] . '/pages/auth/registo.php');
-    exit;
-}
-
-$sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
-$arrResultado = my_query($sql);
-if (count($arrResultado) > 0) { /* validar se já existe o user */
-    $_SESSION['erro'] = 'Utilizador já existe';
-    header('Location: ' . $arrConfig['url_site'] . '/pages/auth/registo.php');
+    header('Location: registo.php');
     exit;
 }
 
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) { /* validar email */
     $_SESSION['erro'] = 'Email inválido';
-    header('Location: ' . $arrConfig['url_site'] . '/pages/auth/registo.php');
+    header('Location: registo.php');
     exit;
 }
 
@@ -50,4 +45,4 @@ $_SESSION['codigo'] = $codigo;
 
 email_verificacao($email, $user, $codigo);
 
-header('Location: ' . $arrConfig['url_auth'] . 'verificar_email.php');
+header('Location: verificar_email.php');

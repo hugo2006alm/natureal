@@ -39,4 +39,8 @@ $arrConfig['encode_jwt'] = 'IJt3d80e';
 $arrConfig['url_img'] = $arrConfig['url_site'] . '/images/';
 $arrConfig['auth_imgType'] = ['image/jpeg', 'image/png', 'image/gif'];
 
+
+$arrConfig['fotos'] = '/var/www/natureal/public/users_pfp/';
+
 include_once 'db.inc.php';
+include_once 'email.inc.php';
