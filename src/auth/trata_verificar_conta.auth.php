@@ -18,6 +18,7 @@ $sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
 $arrResultado = my_query($sql);
 if (count($arrResultado) != 0) { /* validar se já existe o user */
     $sql = "INSERT INTO user (username, email, password, nome, foto) VALUES ('$user', '$email', '$pass', '$nome', '$pfp')";
+    $conn = my_connect($arrConfig['$conn']);
     my_query($sql);
     
     unset($_SESSION['tmp_acc']);
