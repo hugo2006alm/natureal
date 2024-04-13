@@ -1,5 +1,6 @@
 <?php
 include 'include/config.inc.php'; 
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: ' . $arrConfig['url_site'] . '/auth/login.php');
     die();
