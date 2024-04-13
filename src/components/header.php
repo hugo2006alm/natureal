@@ -15,11 +15,14 @@
     <script>
         function updateCountdown() {
             const hoursSpan = document.getElementById('hourspan');
+            const hoursSpan1 = document.getElementById('hourspan1');
             const minutesSpan = document.getElementById('minspan');
+            const minutesSpan1 = document.getElementById('minspan1');
             const secondsSpan = document.getElementById('secspan');
+            const secondsSpan1 = document.getElementById('secspan1');
 
             let now = new Date();
-            let eventDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0); // Define a data do evento
+            let eventDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
 
             let currentTime = now.getTime();
             let eventTime = eventDate.getTime();
@@ -37,6 +40,9 @@
             hoursSpan.style = '--value:' + hr;
             minutesSpan.style = '--value:' + min;
             secondsSpan.style = '--value:' + sec;
+            hoursSpan1.style = '--value:' + hr;
+            minutesSpan1.style = '--value:' + min;
+            secondsSpan1.style = '--value:' + sec;
         }
 
         // Chama a função updateCountdown a cada segundo
@@ -75,4 +81,4 @@
 </head>
 
 <body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()">
-    <?php include 'components/top_nav.php';?>
+    <?php include 'components/top_nav.php'; include 'components/countdown.php'; ?>
