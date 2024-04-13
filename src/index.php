@@ -1,7 +1,5 @@
-
 <?php include 'components/header.php';
 include '../src/include/config.inc.php';?>
-
 
 
 
