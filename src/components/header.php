@@ -1,3 +1,4 @@
+<?php include '../src/include/config.inc.php'; ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
 <head>
