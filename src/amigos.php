@@ -1,4 +1,5 @@
-<?php include 'components/header.php'; 
+<?php include 'components/header.php';
+
 $id_user = $_SESSION['user_id'];
 $sql = "SELECT amigos.id AS id_amigo, amigos.estado AS estado, amigos.iduser AS id_user, amigos.iduser2 AS id_user2, user.* 
 FROM amigos 

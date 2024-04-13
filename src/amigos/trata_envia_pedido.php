@@ -25,4 +25,4 @@ $sql = "INSERT INTO amigos (iduser, iduser2, estado) VALUES ($id_user, $id_amigo
 my_query($sql);
 echo 'Pedido enviado';
 
-header('Location: ../amigos.php');
+header('Location: ../friends.php');
