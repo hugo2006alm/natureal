@@ -6,7 +6,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $nomeoriginal = $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].'.png';
 ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 <?php
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {

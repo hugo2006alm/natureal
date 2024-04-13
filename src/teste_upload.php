@@ -1,5 +1,3 @@
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <form id="upload-form" enctype="multipart/form-data" action="https://www.nyckel.com/v1/functions/vpj20lceipbwcjjb/invoke">
         <input type="file" name="file" id="file">
         <input type="submit" value="Upload">

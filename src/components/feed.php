@@ -1,4 +1,4 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 
 <div class="w-screen flex flex-col justify-center items-center [&>*]:mb-3 last:mb-0 snap-mandatory snap-y overflow-auto">
 
