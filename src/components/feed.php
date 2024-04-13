@@ -1,3 +1,5 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 <div class="w-screen flex flex-col justify-center items-center [&>*]:mb-3 last:mb-0">
 
 <?php 
@@ -25,9 +27,9 @@ foreach($query as $k => $v) {
         </h2>
         <p>'.$v['legenda'].'</p>
         <div class="card-actions justify-end">
-        <button class="btn btn-primary" onclick="like('.$v['iduser'].', '.$v['id'].')">Like</button>
+        <button class="btn btn-primary" onclick="likee('.$v['iduser'].', '.$v['id'].')">Like</button>
         <p>'.$likes[0]['total'].'</p>
-        <button class="btn btn-primary">Deslike</button>
+        <button class="btn btn-primary" onclick="deslikee('.$v['iduser'].', '.$v['id'].')">Deslike</button>
         <p>'.$deslikes[0]['total'].'</p>
             <div class="badge badge-outline">'.$query3[0]['username'].'</div>
         </div>
@@ -37,10 +39,11 @@ foreach($query as $k => $v) {
 
 ?>
 <script>
-function like(iduserr, idpostt){
+function likee(iduserr, idpostt){
+    console.log('ffffeff');
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['dir_site'] ?>/src/posts/like.php",
+            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/like.php",
             method: 'POST',
             data: { 
                     iduser: iduserr,
@@ -51,7 +54,29 @@ function like(iduserr, idpostt){
                 console.log(err)
             },
             success: function(resp) {
-                // alterar num likes e icone do botao
+                // alterar num likes e deslikes e icone do botao
+            }
+           
+        })
+    }, 800)
+}
+
+function deslikee(iduserr, idpostt){
+    console.log('ffffeff');
+    setTimeout(function() {
+        $.ajax({
+            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/deslike.php",
+            method: 'POST',
+            data: { 
+                    iduser: iduserr,
+                    idpost: idpostt
+                },
+            dataType: 'json',
+            error: err => {
+                console.log(err)
+            },
+            success: function(resp) {
+                // alterar num likes e deslikes e icone do botao
             }
            
         })
@@ -60,216 +85,5 @@ function like(iduserr, idpostt){
     </script>
 
 
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div> 
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://farm8.staticflickr.com/7359/10739088533_4670b00e05_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/51759710121_2925e95c62_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl">
-        <figure><img src="https://live.staticflickr.com/65535/52840861248_488bb69224_n.jpg" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">
-                Shoes!
-                <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">Products</div>
-            </div>
-        </div>
-    </div>
+    
 </div>

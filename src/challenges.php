@@ -44,12 +44,15 @@ include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
 <form action="./posts/trata_post.php" method="post" enctype="multipart/form-data">
 <input type="radio" name="objetivo" value="objetivo1" required>
 <label for="objetivo1"><?php echo $reply[0]['titulo'] ?></label><br>
+<img src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[0]['foto'] ?>" alt="">
 
 <input type="radio" name="objetivo" value="objetivo2">
 <label for="objetivo2"><?php echo $reply[1]['titulo'] ?></label><br>
+<img src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[1]['foto'] ?>" alt="">
 
 <input type="radio" name="objetivo" value="objetivo3">
 <label for="objetivo3"><?php echo $reply[2]['titulo'] ?></label><br><br>
+<img src="<?php echo $arrConfig['url_site'].'/src/uploads/tarefas/'. $reply[2]['foto'] ?>" alt="">
 
 <input type="hidden" name="idobjetivo1" value="<?php echo $reply[0]['id'] ?>">
 <input type="hidden" name="idobjetivo2" value="<?php echo $reply[1]['id'] ?>">
