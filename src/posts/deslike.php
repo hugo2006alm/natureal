@@ -8,15 +8,16 @@ $query = my_query("SELECT COUNT(*) AS total FROM likes WHERE iduser = ".$_POST['
 if ($query[0]['total']>0){
     $querytipo = my_query("SELECT tipo FROM likes WHERE iduser = ".$_POST['iduser']." AND idpost = ".$_POST['idpost']);
     my_query("DELETE FROM likes WHERE iduser = ".$_POST['iduser']." AND idpost = ".$_POST['idpost']);
-    if ($querytipo[0]['tipo']==0){
-        my_query("INSERT INTO likes (iduser, idpost, tipo) VALUES (".$_POST['iduser'].",".$_POST['idpost'].", 1)");
+    if ($querytipo[0]['tipo']==1){
+        my_query("INSERT INTO likes (iduser, idpost, tipo) VALUES (".$_POST['iduser'].",".$_POST['idpost'].", 0)");
 
     }
        
    
 }else{
-    my_query("INSERT INTO likes (iduser, idpost, tipo) VALUES (".$_POST['iduser'].",".$_POST['idpost'].", 1)");
+    my_query("INSERT INTO likes (iduser, idpost, tipo) VALUES (".$_POST['iduser'].",".$_POST['idpost'].", 0)");
 }
+
 
 
 
