@@ -1,10 +1,10 @@
 <?php
 include '../include/config.inc.php';
 $target_dir = $arrConfig['dir_site']."/src/uploads/";
-$target_file = $target_dir . basename($_FILES["foto"]["name"]);
+$target_file = $target_dir . $_SESSION['user_id'].date('Y-m-d').'.png';
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$nomeoriginal = $_FILES["foto"]["name"];
+$nomeoriginal = $_SESSION['user_id'].date('Y-m-d').'.png';
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -46,7 +46,7 @@ if ($uploadOk == 0) {
     
     include $arrConfig['dir_site'].'/src/posts/inserirpost.php';
 
-    echo "The file ". htmlspecialchars( basename( $_FILES["foto"]["name"])). " has been uploaded.";
+    echo "The file ". htmlspecialchars( $_SESSION['user_id'].date('Y-m-d').'.png'). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
