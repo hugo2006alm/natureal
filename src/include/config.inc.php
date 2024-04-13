@@ -2,11 +2,6 @@
 @session_start();
 global $arrConfig;
 
-if($_SERVER["HTTP_HOST"] == 'web.colgaia.local' || $_SERVER["HTTP_HOST"] == 'localhost' ){
-    error_reporting(E_ALL);
-} else {
-    error_reporting(0);
-};  
 
 $arrConfig['servername'] = 'sql.freedb.tech';
 $arrConfig['username'] = 'freedb_natureal';
@@ -15,15 +10,10 @@ $arrConfig['dbname'] = 'freedb_natureal';
 
 $arrConfig['isLoginKey'] = 'aajbajkh%/rcKI!ª~uaca76';
 
-
-$arrConfig['url_site'] = 'http://' . $_SERVER["HTTP_HOST"] . '/natureal';
+$arrConfig['url_site'] = 'http://localhost/natureal';
 $arrConfig['dir_site'] = '/Applications/XAMPP/xamppfiles/htdocs/natureal'; 
-$arrConfig['url_components'] = $arrConfig['url_site'] . '/src/components/';
-$arrConfig['dir_components'] = $arrConfig['dir_site'] . '/src/components/';
-$arrConfig['dir_pfp'] = $arrConfig['dir_site'] . '/public/users_pfp/';
-$arrConfig['url_auth'] = $arrConfig['url_site'] . '/src/auth/';
 
-
+$arrConfig['dir_include'] = $arrConfig['dir_site'] . '/src/include/';
 
 $arrConfig['email_token'] = 'aajbajkh%/rcKI!ª~uaca76';
 $arrConfig['key_jwt'] = 'r/FqiRRE';
