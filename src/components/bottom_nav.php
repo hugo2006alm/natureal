@@ -12,19 +12,19 @@
     <div class="flex gap-5 bg-base-100 rounded-md p-4">
         <div>
             <span class="countdown font-mono text-3xl">
-                <span style="--value:10;"></span>
+                <span id="hourspan"></span>
             </span>
             hours
         </div>
         <div>
             <span class="countdown font-mono text-3xl">
-                <span style="--value:24;"></span>
+                <span id="minspan"></span>
             </span>
             min
         </div>
         <div>
             <span class="countdown font-mono text-3xl">
-                <span style="--value:0;"></span>
+                <span id="secspan"></span>
             </span>
             sec
         </div>
