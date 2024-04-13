@@ -1,3 +1,4 @@
+<?php include '../src/include/config.inc.php'; ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
 <head>
@@ -13,5 +14,6 @@
     <title>NatuReal</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="min-w-screen min-h-screen bg-base-100">
+
+<body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()">
     <?php include 'components/top_nav.php';?>

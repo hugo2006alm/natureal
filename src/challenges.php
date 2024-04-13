@@ -1,16 +1,15 @@
-<?php include 'components/header.php';
-include '../src/include/config.inc.php';?>
 <?php 
+include 'components/header.php';
 
 $_SESSION['user_name']='kodin';
 $_SESSION['user_id']= '1';
 
 if (!isset($_SESSION['user_name'])){
-    header('Location: '.$arrConfig['dir_site'].'/src/auth/login.php');
+    header('Location: '.$arrConfig['dir_site'].'/auth/login.php');
     die();
 }
 
-include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
+include $arrConfig['dir_site'].'/tarefas/pushtarefa.php';
 
 ?>
 
@@ -67,4 +66,6 @@ include $arrConfig['dir_site'].'/src/tarefas/pushtarefa.php';
 
 </form>
 </div>
+
+
 <?php include 'components/footer.php';?>
