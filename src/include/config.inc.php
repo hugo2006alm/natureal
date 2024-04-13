@@ -15,6 +15,13 @@ $arrConfig['dbname'] = 'freedb_natureal';
 
 $arrConfig['isLoginKey'] = 'aajbajkh%/rcKI!ª~uaca76';
 
+$arrConfig['url_site'] = 'http://' . $_SERVER["HTTP_HOST"] . '/natureal';
+$arrConfig['dir_site'] = 'C:/wamp64/www/natureal/src'; 
+$arrConfig['url_paginas'] = $arrConfig['url_site'] . '/pages/';
+$arrConfig['url_modules'] = $arrConfig['url_site'] . '/modules/';
+$arrConfig['dir_modules'] = $arrConfig['dir_site'] . '/modules/';
+$arrConfig['url_admin'] = $arrConfig['url_site'] . '/admin/';
+$arrConfig['dir_admin'] = $arrConfig['dir_site'] . '/admin/';
 
 $arrConfig['url_site'] = 'http://' . $_SERVER["HTTP_HOST"] . '/natureal';
 $arrConfig['dir_site'] = '/Applications/XAMPP/xamppfiles/htdocs/natureal'; 
@@ -33,11 +40,4 @@ $arrConfig['encode_jwt'] = 'IJt3d80e';
 $arrConfig['url_img'] = $arrConfig['url_site'] . '/images/';
 $arrConfig['auth_imgType'] = ['image/jpeg', 'image/png', 'image/gif'];
 
-include_once 'db.inc.php';
-include_once 'mail.inc.php';
-
-
-
-
-
-
+include_once $arrConfig['dir_include'] . 'db.inc.php';
