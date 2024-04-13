@@ -3,6 +3,7 @@
 <html lang="en" data-theme="lofi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         const ios = () => {
             if (typeof window === `undefined` || typeof navigator === `undefined`) return false;
@@ -10,6 +11,7 @@
             return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
         };
     </script>
+
     <script>
         function updateCountdown() {
             const hoursSpan = document.getElementById('hourspan');
@@ -40,7 +42,12 @@
         // Chama a função updateCountdown a cada segundo
         setInterval(updateCountdown, 1000);
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (ios()) {
+            var viewport = document.querySelector('meta[name="viewport"]');
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover');
+        }
+    </script>
     <title>NatuReal</title>
     <link rel="stylesheet" href="output.css">
 </head>
