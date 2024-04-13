@@ -4,7 +4,7 @@ $email = $_POST['email'];
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $confirmar_pass = $_POST['confirmar_pass'];
-$pfp = 'e.png';
+$pfp = 'default.png';
 
 if($pass != $confirmar_pass) { /* validar pass e confirmar */
     $_SESSION['erro'] = 'As passwords não coincidem';
@@ -12,7 +12,7 @@ if($pass != $confirmar_pass) { /* validar pass e confirmar */
     exit;
 }
 
-$sql = "SELECT * FROM users WHERE email = '$email' OR username = '$user'";
+$sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
 $arrResultado = my_query($sql);
 if (count($arrResultado) > 0) { /* validar se já existe o user */
     $_SESSION['erro'] = 'Utilizador já existe';
@@ -20,7 +20,7 @@ if (count($arrResultado) > 0) { /* validar se já existe o user */
     exit;
 }
 
-$sql = "SELECT * FROM users WHERE email = '$email' OR username = '$user'";
+$sql = "SELECT * FROM user WHERE email = '$email' OR username = '$user'";
 $arrResultado = my_query($sql);
 if (count($arrResultado) > 0) { /* validar se já existe o user */
     $_SESSION['erro'] = 'Utilizador já existe';
@@ -39,9 +39,8 @@ $pass = password_hash($pass, PASSWORD_DEFAULT); /* encriptar pass */
 $_SESSION['tmp_acc'] = array(
     'user' => $user,
     'email' => $email,
-    'pass' => $pass,
-    'cargo' => $cargo,
-    'pfp' => $pfp
+    'pass' => $pass,    
+    'foto' => $pfp
 );
 // -- enviar o email;
 $codigo = rand(10000, 99999);

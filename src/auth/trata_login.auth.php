@@ -10,10 +10,10 @@ if($user_or_email == '' || $pass == ''){
 
 if(filter_var($_POST['user_or_mail'], FILTER_VALIDATE_EMAIL)) {
     $email = $_POST['user_or_mail'];    
-    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $sql = "SELECT * FROM user WHERE email = '$email'";
 } else {
     $user = $_POST['user_or_mail'];
-    $sql = "SELECT * FROM users WHERE username = '$user'";
+    $sql = "SELECT * FROM user WHERE username = '$user'";
 }
 
 $res = my_query($sql);
@@ -28,7 +28,7 @@ if(count($res) == 0) {
     }
     $_SESSION['user_name'] = $email != '' ? $res[0]['email'] : $res[0]['username'];  
     $_SESSION['user_id'] = $res[0]['id'];                
-    $_SESSION['user_pfp'] = $res[0]['pfp'];
+    $_SESSION['user_foto'] = $res[0]['foto'];
     echo json_encode(['status' => 'success', 'msg' => 'Login efetuado com sucesso']);
     exit;
 } else {
