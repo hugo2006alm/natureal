@@ -37,6 +37,7 @@ if($_POST['tipo'] == "1") {
         }
         $pass = password_hash($password, PASSWORD_DEFAULT);
         $sql = "UPDATE user SET password = '$pass' WHERE email = '$email'";
+        echo $sql;
         my_query($sql);
         echo "Password alterada com sucesso";
 
