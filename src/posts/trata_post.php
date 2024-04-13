@@ -1,6 +1,6 @@
 <?php
 include '../include/config.inc.php';
-$target_dir = $arrConfig['dir_site']."/src/uploads/";
+$target_dir = $arrConfig['dir_site']."/uploads/";
 $target_file = $target_dir . $_SESSION['user_id'].date('Y-m-d').'.png';
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -70,7 +70,7 @@ if ($uploadOk == 0) {
   function confidence(stringg){
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/sessionconfidence.php",
+            url: "<?php echo $arrConfig['url_site'] ?>/posts/sessionconfidence.php",
             method: 'POST',
             data: { 
                     string: JSON.parse(stringg).confidence
@@ -90,14 +90,19 @@ if ($uploadOk == 0) {
  </script>
 
  <?php
-    
+
+
+
   if (floatval($_SESSION['confidence']) < 0.7){
     echo "not a bird.";
     die();
   }
+  else{
+    echo "bird.";
+  }
    
 
-    include $arrConfig['dir_site'].'/src/posts/inserirpost.php';
+    include $arrConfig['dir_site'].'/posts/inserirpost.php';
 
     echo "The file ". htmlspecialchars( $_SESSION['user_id'].date('Y-m-d').'.png'). " has been uploaded.";
   } else {

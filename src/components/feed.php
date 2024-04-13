@@ -17,7 +17,7 @@ foreach($query as $k => $v) {
     $query3 = my_query("SELECT * FROM user WHERE id = ".$v['iduser']);
    $likes= my_query("SELECT COUNT(*) AS total FROM likes WHERE idpost = ".$v['id']." AND tipo = 1");
    $deslikes= my_query("SELECT COUNT(*) AS total FROM likes WHERE idpost = ".$v['id']." AND tipo = 0");
-    $img =$arrConfig['url_site'].'/src/uploads/'.$v['foto'];
+    $img =$arrConfig['url_site'].'/uploads/'.$v['foto'];
     echo ' <div class="card w-80 bg-base-100 shadow-xl">
     <figure><img src="'.$img.'" alt="" /></figure>
     <div class="card-body">
@@ -27,9 +27,9 @@ foreach($query as $k => $v) {
         </h2>
         <p>'.$v['legenda'].'</p>
         <div class="card-actions justify-end">
-        <button class="btn btn-primary" onclick="likee('.$v['iduser'].', '.$v['id'].')">Like</button>
+        <button class="btn btn-primary" onclick="likee('.$_SESSION['user_id'].', '.$v['id'].')">Like</button>
         <p>'.$likes[0]['total'].'</p>
-        <button class="btn btn-primary" onclick="deslikee('.$v['iduser'].', '.$v['id'].')">Deslike</button>
+        <button class="btn btn-primary" onclick="deslikee('.$_SESSION['user_id'].', '.$v['id'].')">Deslike</button>
         <p>'.$deslikes[0]['total'].'</p>
             <div class="badge badge-outline">'.$query3[0]['username'].'</div>
         </div>
@@ -43,7 +43,7 @@ function likee(iduserr, idpostt){
     console.log('ffffeff');
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/like.php",
+            url: "<?php echo $arrConfig['url_site'] ?>/posts/like.php",
             method: 'POST',
             data: { 
                     iduser: iduserr,
@@ -65,7 +65,7 @@ function deslikee(iduserr, idpostt){
     console.log('ffffeff');
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['url_site'] ?>/src/posts/deslike.php",
+            url: "<?php echo $arrConfig['url_site'] ?>/posts/deslike.php",
             method: 'POST',
             data: { 
                     iduser: iduserr,
