@@ -6,5 +6,5 @@
     <title>NatuReal</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="min-w-screen min-h-screen">
+<body class="min-w-screen min-h-screen" onload = "getLocationConstant()">
     <div class="w-screen bg-base-100 min-h-screen">

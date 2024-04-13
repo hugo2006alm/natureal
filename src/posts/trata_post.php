@@ -4,6 +4,7 @@ $target_dir = $arrConfig['dir_site']."/src/uploads/";
 $target_file = $target_dir . basename($_FILES["foto"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$nomeoriginal = $_FILES["foto"]["name"];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -42,7 +43,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
-   
+    
+    include $arrConfig['dir_site'].'/src/posts/inserirpost.php';
+
     echo "The file ". htmlspecialchars( basename( $_FILES["foto"]["name"])). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
