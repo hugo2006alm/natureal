@@ -36,7 +36,7 @@ if ($_POST['password'] != $user[0]['password']){
 }
 
         my_query('UPDATE user SET username =  "'. $_POST['username'] .'" , nome = "'. $_POST['nome'] .'" , email = "'. $_POST['email'] .'" WHERE id = '. $user_id);
-        header('Location: settings.php');
+        
     }
 ?>
 <!DOCTYPE html>

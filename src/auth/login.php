@@ -15,6 +15,7 @@ include '../include/config.inc.php';
         <input type="password" name="password" id="password" placeholder="Password" required>
         <input type="submit">
     </form>
+    <a href="registo.php">Registar</a>
     
 </body>
 </html>

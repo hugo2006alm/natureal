@@ -18,7 +18,7 @@ if ($queryverificar[0]['total']>2){
    }
 
    if ($c >2){
-    echo 'Você já postou hoje';
+    //echo 'Você já postou hoje';
             include 'components/footer.php';
            die();
    }

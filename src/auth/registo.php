@@ -18,6 +18,7 @@ echo isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
         <input required type="password" name="confirmar_pass" id="confirmar_pass" placeholder="Confirmar Password">
         <input type="submit">
     </form>
+    <a href="login.php">Login</a>
     
 </body>
 </html>
