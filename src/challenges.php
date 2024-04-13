@@ -33,6 +33,8 @@ if ($queryverificar[0]['total']>2){
         $query = my_query("SELECT * FROM tarefas WHERE dataparaaparecer= '".date('Y-m-d')."'");
     ?>
 
+    
+
     <div class="stats stats-vertical shadow">
         <div class="stat">
             <div class="stat-figure">
@@ -110,4 +112,9 @@ if ($queryverificar[0]['total']>2){
 </div>
 
 
-<?php include 'components/footer.php'; ?>
+<?php include 'components/footer.php';
+
+
+
+
+?>

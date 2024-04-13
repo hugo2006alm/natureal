@@ -70,7 +70,7 @@ if ($uploadOk == 0) {
   function confidence(stringg){
     setTimeout(function() {
         $.ajax({
-            url: "<?php echo $arrConfig['url_site'] ?>/posts/sessionconfidence.php",
+            url: "/posts/sessionconfidence.php",
             method: 'POST',
             data: { 
                     string: JSON.parse(stringg).confidence
@@ -88,7 +88,7 @@ if ($uploadOk == 0) {
     }, 800)
 } */
 
-//console.log("<?php echo $arrConfig['url_site'] ?>/posts/inserirpost?nomeoriginal=<?php echo $nomeoriginal ?>&descricao=<?php echo $_POST['descricao'] ?>&objetivo=<?php echo $_POST['objetivo'] ?>&Posicao=<?php echo $_POST['Posicao'] ?>&idobjetivo1=<?php echo $_POST['idobjetivo1'] ?>&idobjetivo2=<?php echo $_POST['idobjetivo2'] ?>&idobjetivo3=<?php echo $_POST['idobjetivo3'] ?>&string="+JSON.parse(string).confidence);
+
 
 window.location.replace("<?php echo $arrConfig['url_site'] ?>/posts/inserirpost.php?nomeoriginal=<?php echo $nomeoriginal ?>&descricao=<?php echo $_POST['descricao'] ?>&objetivo=<?php echo $_POST['objetivo'] ?>&Posicao=<?php echo $_POST['Posicao'] ?>&idobjetivo1=<?php echo $_POST['idobjetivo1'] ?>&idobjetivo2=<?php echo $_POST['idobjetivo2'] ?>&idobjetivo3=<?php echo $_POST['idobjetivo3'] ?>&string="+JSON.parse(string).confidence);
 
