@@ -26,7 +26,9 @@
                 }
                 
             }
+
         }
+        my_query('UPDATE user SET username =  "'. $_POST['username'] .'" , nome = "'. $_POST['nome'] .'" WHERE id = '. $user_id,1 );
        // header('Location: settings.php');
     }else {
         $user_id = $_SESSION['user_id'];

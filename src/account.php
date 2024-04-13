@@ -33,12 +33,12 @@ include 'include/config.inc.php';
 <body>
     <h2>Uutilizador: <?php echo $user[0]['username']; ?></h2>
     <h2>FOTO:</h2>
-    <!--img src="uploads/Perfil/<?php echo $user[0]['foto']; ?>" alt=""-->
+    <img src="../public/users_pfp/<?php echo $user[0]['foto']; ?>" alt="" style="max-width:100px">
     <h1>POSTS:</h1>
     <?php
         for($i = 0; $i < count($posts); $i++){
             //Qualquer cena para postar foto
-            echo ' <img src="uploads/'.$posts[$i]['foto'].'" alt="">';
+            echo ' <img src="../public/users_pfp/'.$posts[$i]['foto'].'" alt="">';
         }
 
     ?>
