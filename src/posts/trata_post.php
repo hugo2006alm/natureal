@@ -91,7 +91,7 @@ if ($uploadOk == 0) {
 
  <?php
     
-  if (floatval($_SESSION['confidence']) < 0.8){
+  if (floatval($_SESSION['confidence']) < 0.7){
     echo "not a bird.";
     die();
   }
