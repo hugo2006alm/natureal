@@ -38,6 +38,7 @@ if ($_POST['password'] != $user[0]['password']){
         my_query('UPDATE user SET username =  "'. $_POST['username'] .'" , nome = "'. $_POST['nome'] .'" , email = "'. $_POST['email'] .'" WHERE id = '. $user_id);
         
     }
+  
 ?>
     <div class="w-screen flex flex-col justify-center items-center mb-7">
         <h1 class="text-primary text-4xl font-black mt-6">Definições</h1>
@@ -47,7 +48,7 @@ if ($_POST['password'] != $user[0]['password']){
         <input class="input input-bordered w-full max-w-xs" placeholder="Username" type="text" name="username" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['username']); ?>">
         <input class="input input-bordered w-full max-w-xs" placeholder="Nome" type="text" name="nome" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['nome']); ?>">
         <input class="input input-bordered w-full max-w-xs" placeholder="Email" type="email" name="email" required  value="<?php echo htmlspecialchars($user[0]['email']); ?>">
-        <input class="input input-bordered w-full max-w-xs" placeholder="Password" type="password" name="password" required>
+        <input class="input input-bordered w-full max-w-xs" placeholder="Password" type="password" name="password">
         <img id="file-image" src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="" class="max-w-xs rounded-md">
         <input id="file" class="file-input file-input-bordered file-input-primary w-full max-w-xs" type="file" name="photo">
         <button class="btn btn-primary w-full max-w-xs text-base text-base-100" type="submit">Submeter</button>
