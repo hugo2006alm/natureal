@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 } 
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="lofi">
+<html lang="en" data-theme="lemonade">
 <head>
     <link rel="manifest" href="/manifest.json">
     <meta charset="UTF-8">
