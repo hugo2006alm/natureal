@@ -23,6 +23,8 @@
                 <input type="submit" value="Verificar" class="btn btn-primary w-[45%] mb-3">
             </form>
             <a href="registo.php" class="link">Voltar</a>
+    
+    
 
         </div>
     </div> 
