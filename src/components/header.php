@@ -128,6 +128,33 @@ if (!isset($_SESSION['user_id'])) {
         alert("Error code " + event.code + ". " + event.message);
     } */
 </script>
+<script>
+    function changeTheme() {
+        var themeValue;
+        if (document.getElementById('theme').checked) {
+            document.getElementById('theme').checked = false
+            themeValue = 'lofi';
+        }
+        else {
+            document.getElementById('theme').checked = true
+            themeValue = 'forest';
+        }
+        var htmlElement = document.querySelector('html');
+        // Altere o valor do atributo data-theme
+        htmlElement.setAttribute('data-theme', themeValue);
+        $.ajax({
+                type: 'POST',
+                url: '<?php echo $arrConfig['url_site'];?>/include/update_session_theme.php', 
+                data: { theme: themeValue },
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(response) {
+                    console.log(response);
+                }
+            });
+    }
+</script>
 </head>
 
 <!-- <body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()"> -->
