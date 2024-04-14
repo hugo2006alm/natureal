@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 } 
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="lemonade">
+<html lang="en" data-theme="<?php echo isset($_SESSION['theme']) ? $_SESSION['theme'] : 'lemonade' ?>">
 <head>
     <link rel="manifest" href="/manifest.json">
     <meta charset="UTF-8">
@@ -133,11 +133,11 @@ if (!isset($_SESSION['user_id'])) {
         var themeValue;
         if (document.getElementById('theme').checked) {
             document.getElementById('theme').checked = false
-            themeValue = 'lofi';
+            themeValue = 'lemonade';
         }
         else {
             document.getElementById('theme').checked = true
-            themeValue = 'forest';
+            themeValue = 'sunset';
         }
         var htmlElement = document.querySelector('html');
         // Altere o valor do atributo data-theme
