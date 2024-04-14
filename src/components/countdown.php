@@ -10,7 +10,7 @@
             <span class="countdown font-mono text-3xl">
                 <span id="minspan1"></span>
             </span>
-            min
+            mins
         </div>
         <div>
             <span class="countdown font-mono text-3xl">

@@ -10,8 +10,9 @@ $query = my_query("SELECT * FROM posts ORDER BY id DESC LIMIT 20");
     $.ajax({
         url: '<?php echo $arrConfig['url_site'] ?>/posts/fetch_post.php',
         type: 'GET',
-        success: function(data) {
+        success: async function(data) {
             var skeleton = document.getElementById('skeleton');
+            await new Promise(r => setTimeout(r, 2000));
             skeleton.style.display = 'none';
             var posts = JSON.parse(data);
             console.log(posts);            
@@ -54,10 +55,13 @@ foreach($query as $k => $v) {
     $query2 = my_query("SELECT * FROM tarefas WHERE id = ".$v['idtarefa']);
     if ($query2[0]['nivel']== 1) {
         $raridade = "Comum";
+        $cor = "bg-zinc-400";
     } else if ($query2[0]['nivel']== 2) {
         $raridade = "Raro";
+        $cor = "bg-emerald-400";
     } else if ($query2[0]['nivel']== 3) {
         $raridade = "Épico";
+        $cor = "bg-yellow-400";
     } 
 
         $query3 = my_query("SELECT * FROM user WHERE id = " . $v['iduser']);
