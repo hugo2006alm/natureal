@@ -28,7 +28,8 @@ if ($_GET['objetivo'] == 'objetivo1'){
     }
 }
  if ($c > 0){
-  header('Location: '.$arrConfig['url_site'].'/challenges.php');
+
+  header('Location: '.$arrConfig['url_site'].'/challenges.php?erro=2');
   die();
   
  }
@@ -47,7 +48,7 @@ if ($_GET['objetivo'] == 'objetivo1'){
     }
 }
  if ($c2 > 0){
-  header('Location: '.$arrConfig['url_site'].'/challenges.php');
+  header('Location: '.$arrConfig['url_site'].'/challenges.php?erro=2');
   die();
   
  }
@@ -66,7 +67,7 @@ if ($_GET['objetivo'] == 'objetivo1'){
     }
 }
  if ($c3 > 0){
-  header('Location: '.$arrConfig['url_site'].'/challenges.php');
+  header('Location: '.$arrConfig['url_site'].'/challenges.php?erro=2');
   die();
   
  }
