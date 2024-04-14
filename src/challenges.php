@@ -41,7 +41,7 @@ if (isset($_GET['erro'])){
 ?>
 
 <div class="w-screen flex flex-col justify-center items-center">
-    <h1 class="text-primary text-4xl font-black mt-6">Objetivos do dia</h1>
+    <h1 class="text-primary text-4xl font-black my-6">Objetivos do dia</h1>
 
     <?php
 
@@ -50,7 +50,7 @@ if (isset($_GET['erro'])){
 
     
 
-    <div class="stats stats-vertical shadow">
+    <div class="stats stats-vertical border border-primary">
         <div class="stat">
             <div class="stat-figure">
                 <div class="avatar pl-10">
@@ -61,7 +61,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #1 <div class="badge bg-grey-400">Normal</div></div>
+            <div class="stat-title">Objetivo #1 <div class="badge bg-zinc-400 text-black">Comum</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[0]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[0]['nomeespecie'] ?></div>
         </div>
@@ -76,7 +76,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #2 <div class="badge bg-blue-400">Raro</div></div>
+            <div class="stat-title">Objetivo #2 <div class="badge bg-emerald-400 text-black">Raro</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[1]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[1]['nomeespecie'] ?></div>
         </div>
@@ -91,7 +91,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400">Lendário</div></div>
+            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400 text-black">Lendário</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[2]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[2]['nomeespecie'] ?></div>
         </div>
