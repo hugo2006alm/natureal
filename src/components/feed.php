@@ -60,7 +60,7 @@ foreach($query as $k => $v) {
         $raridade = "Raro";
         $cor = "bg-emerald-400";
     } else if ($query2[0]['nivel']== 3) {
-        $raridade = "Épico";
+        $raridade = "Lendário";
         $cor = "bg-yellow-400";
     } 
 
