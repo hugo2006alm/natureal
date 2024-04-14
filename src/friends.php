@@ -29,7 +29,7 @@ if(count($res) > 0) {
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
-                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $v['user.foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4">
+                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $v['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4">
                             <div>
                                 <h2 class="text-lg font-semibold">' . $v['username'] . '</h2>
                                 <p class="text-gray-500">Convite pendente</p> 
@@ -44,7 +44,7 @@ if(count($res) > 0) {
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
-                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $res2[0]['user.foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
+                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $res2[0]['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
                             <div>
                                 <h2 class="text-lg font-semibold">' . $res2[0]['username'] . '</h2>
                                 <p class="text-gray-500">Convite pendente.</p> 
@@ -61,13 +61,17 @@ if(count($res) > 0) {
                 // tratar de pedidos de amizade
             } else {  
                 if(($v['id_user2'] == $_SESSION['user_id'])) {    
+                    $totalpostsnivel1 = my_query("SELECT COUNT(*) AS total1 FROM posts WHERE niveltarefa = 1 AND iduser=".$res2[0]['id']);
+                    $totalpostsnivel2 = my_query("SELECT COUNT(*) AS total2 FROM posts WHERE niveltarefa = 2 AND iduser=".$res2[0]['id']);
+                    $totalpostsnivel3 = my_query("SELECT COUNT(*) AS total3 FROM posts WHERE niveltarefa = 3 AND iduser=".$res2[0]['id']);
+                    $pontos = intval($totalpostsnivel1[0]['total1'])+ (intval($totalpostsnivel2[0]['total2'])*2) + (intval($totalpostsnivel3[0]['total3'])*3);
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
                             <img src="' . $arrConfig['url_site'] . '/uploads/' . $res2[0]['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
                             <div>
                                 <h2 class="text-lg font-semibold">' . $res2[0]['username'] . '</h2>
-                                <p class="text-gray-500">Amigos.</p> 
+                                <p class="text-gray-500">'.$pontos.' pontos</p> 
                             </div>
                         </div>
                         <div>                                                        
@@ -78,13 +82,17 @@ if(count($res) > 0) {
                     ';                 
                     
                 } else {
+                    $totalpostsnivel1 = my_query("SELECT COUNT(*) AS total1 FROM posts WHERE niveltarefa = 1 AND iduser=".$v['id_user2']);
+                    $totalpostsnivel2 = my_query("SELECT COUNT(*) AS total2 FROM posts WHERE niveltarefa = 2 AND iduser=".$v['id_user2']);
+                    $totalpostsnivel3 = my_query("SELECT COUNT(*) AS total3 FROM posts WHERE niveltarefa = 3 AND iduser=".$v['id_user2']);
+                    $pontos = intval($totalpostsnivel1[0]['total1'])+ (intval($totalpostsnivel2[0]['total2'])*2) + (intval($totalpostsnivel3[0]['total3'])*3);
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
                             <img src="' . $arrConfig['url_site'] . '/uploads/' . $v['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
                             <div>
                                 <h2 class="text-lg font-semibold">' . $v['username'] . '</h2>
-                                <p class="text-gray-500">Amigos.</p> 
+                                <p class="text-gray-500">'.$pontos.' pontos</p> 
                             </div>
                         </div>
                         <div>                            
