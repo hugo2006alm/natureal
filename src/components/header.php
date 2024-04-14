@@ -1,5 +1,6 @@
 <?php
 include 'include/config.inc.php'; 
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: ' . $arrConfig['url_site'] . '/auth/login.php');
     die();
@@ -60,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
             viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover');
         }
     </script>
-    <script>
+    <!-- <script>
         var totalDistance = 0; // Variável para armazenar a distância total percorrida
         var lastPosition = null; // Última posição conhecida
         function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -99,11 +100,11 @@ if (!isset($_SESSION['user_id'])) {
         } else {
             console.error('Geolocalização não é suportada pelo seu navegador.');
         }
-    </script>
+    </script> -->
     <title>NatuReal</title>
     <link rel="stylesheet" href="output.css">
     <script type="text/javascript">
-    function getLocationConstant() {
+    /* function getLocationConstant() {
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
@@ -122,9 +123,10 @@ if (!isset($_SESSION['user_id'])) {
     // If something has gone wrong with the geolocation request
     function onGeoError(event) {
         alert("Error code " + event.code + ". " + event.message);
-    }
+    } */
 </script>
 </head>
 
-<body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()">
+<!-- <body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()"> -->
+<body class="min-w-screen min-h-screen bg-base-100">
     <?php include 'components/top_nav.php'; include 'components/countdown.php'; ?>

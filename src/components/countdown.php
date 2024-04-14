@@ -4,7 +4,7 @@
             <span class="countdown font-mono text-3xl">
                 <span id="hourspan1"></span>
             </span>
-            hours
+            horas
         </div>
         <div>
             <span class="countdown font-mono text-3xl">
@@ -16,7 +16,7 @@
             <span class="countdown font-mono text-3xl">
                 <span id="secspan1"></span>
             </span>
-            sec
+            segs
         </div>
     </div>
 </div>
