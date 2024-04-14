@@ -20,9 +20,6 @@
             <li >
                 <div class="flex justify-between" onclick="document.getElementById('theme').checked ? document.getElementById('theme').checked = false : document.getElementById('theme').checked = true">
                     <span class="inline">
-                        <?php
-                        // echo $_SESSION['theme'];
-                        ?>
                         Tema
                     </span>
                     <input id="theme" type="checkbox" value="forest" class="checkbox theme-controller"/>
