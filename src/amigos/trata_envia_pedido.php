@@ -5,11 +5,14 @@ $username = $_POST['username'];
 $sql = "SELECT * FROM user WHERE username = '$username'";
 $res = my_query($sql);
 if($res[0]['id'] == $_SESSION['user_id']) {
-    echo 'nao se pode convidar a si próprio';
+  //  echo 'nao se pode convidar a si próprio';
+    header('Location: ../friends.php?erro=1');
+    
     die();
 }
 if(count($res) == 0) {
-    echo 'Utilizador não encontrado';    
+    //echo 'Utilizador não encontrado'; 
+    header('Location: ../friends.php?erro=2');
     die();
 }
 
@@ -18,11 +21,11 @@ $id_amigo = $res[0]['id'];
 $sql = "SELECT * FROM amigos WHERE (iduser = $id_user AND iduser2 = $id_amigo) OR (iduser = $id_amigo AND iduser2 = $id_user)";
 $res = my_query($sql);
 if(count($res) > 0) {
-    echo 'já existe um pedido';
+    header('Location: ../friends.php?erro=3');
     die();
 } 
 $sql = "INSERT INTO amigos (iduser, iduser2, estado) VALUES ($id_user, $id_amigo, 0)";
 my_query($sql);
-echo 'Pedido enviado';
+//echo 'Pedido enviado';
 
 header('Location: ../friends.php');

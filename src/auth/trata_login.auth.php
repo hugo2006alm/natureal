@@ -9,14 +9,16 @@ $res = my_query($sql);
 
 
 if(count($res) == 0) { //Significa que o user nao existe
-    echo json_encode(['status' => 'error', 'msg' => 'Utilizador não encontrado']);
+  //  echo json_encode(['status' => 'error', 'msg' => 'Utilizador não encontrado']);
+    header('Location: login.php?erro=1');
     exit;
 } else if(password_verify($pass, $res[0]['password'])) { 
     $_SESSION['user_id'] = $res[0]['id'];                
     echo json_encode(['status' => 'success', 'msg' => 'Login efetuado com sucesso']);
     
 } else {
-    echo json_encode(['status' => 'error', 'msg' => 'Credenciais incorretas']); //significa que a pwd esta mal
+  //  echo json_encode(['status' => 'error', 'msg' => 'Credenciais incorretas']); //significa que a pwd esta mal
+    header('Location: login.php?erro=2');
     exit;
 }
 

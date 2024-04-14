@@ -6,7 +6,7 @@ if (floatval($_GET['string']) < 0.7){
   //echo "not a bird.";
   //echo floatval($_GET['string']);
 
- header('Location: '.$arrConfig['url_site'].'/challenges.php');
+ header('Location: '.$arrConfig['url_site'].'/challenges.php?erro=1');
   die();
 }
 
