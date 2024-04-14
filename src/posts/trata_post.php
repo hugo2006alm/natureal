@@ -1,7 +1,7 @@
 <?php
 include '../include/config.inc.php';
 $target_dir = $arrConfig['dir_site']."/uploads/";
-$data = date('Y-m-d h:i:s');
+$data = date('Y-m-d h-i-s');
 $target_file = $target_dir . $_SESSION['user_id'].$data.$_POST['objetivo'].'.png';
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
