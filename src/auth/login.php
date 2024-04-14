@@ -25,13 +25,6 @@ if (isset($_GET['erro'])){
    
 }
 ?>
-    <form method="post" action="trata_login.auth.php">
-        
-        <input type="text" name="login" id="login" placeholder="Email ou Username" required>
-        <input type="password" name="password" id="password" placeholder="Password" required>
-        <input type="submit">
-    </form>
-    <a href="registo.php">Registar</a>
     
     <div class="card bg-base-100 shadow-xl flex justify-center h-screen w-screen">
         <figure class="px-10 pt-10 ">
