@@ -1,11 +1,11 @@
 <?php
 include '../include/config.inc.php';
 $target_dir = $arrConfig['dir_site']."/uploads/";
-$rand =rand(1,10000);
-$target_file = $target_dir . $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].$rand.'.png';
+$data = date('Y-m-d h:i:s');
+$target_file = $target_dir . $_SESSION['user_id'].$data.$_POST['objetivo'].'.png';
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$nomeoriginal = $_SESSION['user_id'].date('Y-m-d').$_POST['objetivo'].$rand.'.png';
+$nomeoriginal = $_SESSION['user_id'].$data.$_POST['objetivo'].'.png';
 ?>
 
 <?php

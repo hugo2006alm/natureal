@@ -15,7 +15,7 @@
             countdownBottom.classList.add('-z-10');
             countdownTop.classList.remove('opacity-0');
             // countdownTop.classList.remove('hidden');
-            throw new Error("Stop execution");
+            //throw new Error("Stop execution");
         }
         
         window.addEventListener("scroll", function() {
