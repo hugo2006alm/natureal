@@ -132,7 +132,7 @@ if (isset($_GET['erro'])){
   <h3 class="font-bold text-lg">Adicionar Amigo</h3>
     <div class="pt-8 flex justify-center">
         <form method="post" action="amigos/trata_envia_pedido.php">            
-            <input type="text" id="email" name="username" class="border rounded px-2 py-1 mb-4" placeholder="Username">            
+            <input type="text" id="email" name="username" class="input input-bordered w-full max-w-xs px-2 py-1 mb-4" placeholder="Username">            
             <div class="flex justify-center space-x-4">
                 <button type="submit" class="bg-primary text-white px-4 py-2 rounded">Enviar</button>
                 <label for="friendsModal" class="btn rounded bg-gray-100 text-black">Fechar</label>

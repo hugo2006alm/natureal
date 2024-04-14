@@ -22,7 +22,11 @@ include 'components/header.php';
 <div class="ml-4 mr-4">
 <div class="flex items-center justify-center flex-col bg-base-100 p-8 rounded-lg border border-primary">
     <!-- Imagem do perfil -->
-    <img src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="<?php echo $user[0]['nome']; ?>" class="rounded-full mb-4" style="max-width: 100px;">
+    <div class="avatar mb-4">
+        <div class="w-24 rounded-full">
+            <img src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="<?php echo $user[0]['nome']; ?>" class="rounded-full mb-4 w-20 h-20">
+        </div>
+    </div>
 
     <!-- Informações do perfil -->
     <h2 class="text-xl mb-2 text-primary"><span class="font-bold">Nome:</span> <?php echo $user[0]['nome']; ?></h2>
@@ -30,7 +34,7 @@ include 'components/header.php';
 </div>
 </div>
 <div class="w-screen flex flex-col justify-center items-center">
-    <h1 class="text-primary text-4xl font-bold mt-6 mb-6">Publicações</h1>
+    <h1 class="text-primary text-4xl font-black mt-6 mb-6">Publicações</h1>
 <?php
 $flag = '';
 echo '<div '.$flag.'>';
