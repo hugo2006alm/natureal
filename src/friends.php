@@ -29,7 +29,7 @@ if(count($res) > 0) {
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
-                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $v['user.foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4">
+                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $v['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4">
                             <div>
                                 <h2 class="text-lg font-semibold">' . $v['username'] . '</h2>
                                 <p class="text-gray-500">Convite pendente</p> 
@@ -44,7 +44,7 @@ if(count($res) > 0) {
                     echo '
                     <li class="flex items-center justify-between space-x-4 pr-6 px-4">
                         <div class="flex items-center space-x-4 pr-4">
-                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $res2[0]['user.foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
+                            <img src="' . $arrConfig['url_site'] . '/uploads/' . $res2[0]['foto'] . '" alt="Amigo 1" class="w-12 h-12 rounded-full mr-4"> 
                             <div>
                                 <h2 class="text-lg font-semibold">' . $res2[0]['username'] . '</h2>
                                 <p class="text-gray-500">Convite pendente.</p> 
