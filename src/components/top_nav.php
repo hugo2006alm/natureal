@@ -23,12 +23,12 @@
                     <?php
                     $checked = ''; 
                     if(isset($_SESSION['theme'])) {
-                            if ($_SESSION['theme'] == 'sunset') 
+                            if ($_SESSION['theme'] == 'forest') 
                             {
                                $checked = 'checked';
                             }
                          }  ?>
-                    <input id="theme" type="checkbox" value="sunset" class="checkbox theme-controller" <?php echo $checked; ?>/>
+                    <input id="theme" type="checkbox" value="forest" class="checkbox theme-controller" <?php echo $checked; ?>/>
                 </div>
             </li>
             <li><a href="<?php echo $arrConfig['url_site'].'/settings.php' ?>">Definições</a></li>

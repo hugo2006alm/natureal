@@ -49,8 +49,8 @@ if ($_POST['password'] != $user[0]['password']){
         <input class="input input-bordered w-full max-w-xs" placeholder="Email" type="email" name="email" required  value="<?php echo htmlspecialchars($user[0]['email']); ?>">
         <input class="input input-bordered w-full max-w-xs" placeholder="Password" type="password" name="password" required  value="<?php echo htmlspecialchars($user[0]['password']); ?>">
         <img id="file-image" src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="" class="max-w-xs rounded-md">
-        <input id="file" class="file-input file-input-bordered w-full max-w-xs" type="file" name="photo">
-        <button class="btn btn-primary w-full max-w-xs" type="submit">Submeter</button>
+        <input id="file" class="file-input file-input-bordered file-input-primary w-full max-w-xs" type="file" name="photo">
+        <button class="btn btn-primary w-full max-w-xs text-base text-base-100" type="submit">Submeter</button>
     </form>
     <form action="end.php" method="POST" class="flex flex-col justify-center items-center w-screen">
         <button class="btn btn-link" type="submit">Terminar Sessão</button>

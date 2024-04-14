@@ -137,7 +137,7 @@ if (!isset($_SESSION['user_id'])) {
         }
         else {
             document.getElementById('theme').checked = true
-            themeValue = 'sunset';
+            themeValue = 'forest';
         }
         var htmlElement = document.querySelector('html');
         // Altere o valor do atributo data-theme
