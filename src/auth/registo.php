@@ -1,6 +1,3 @@
-<?php include '../include/config.inc.php';
-echo isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
-?>
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
 <link rel="stylesheet" href="../output.css">
@@ -8,12 +5,12 @@ echo isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Registro</title>
 </head>
 
 <body>
-    <div class="card w-96 bg-base-100 shadow-xl flex justify-center h-screen">
-        <div class="card-body items-center text-center">
+    <div class="card w-screen bg-base-100 shadow-xl flex justify-center items-center h-screen">
+        <div class="card-body justify-center items-center text-center">
             <h2 class="card-title mb-6">Crie Conta</h2>
             <form method="post" action="trata_registo.auth.php">
                 <input required type="text" name="nome" id="nome" placeholder="Nome" class="input input-bordered w-full max-w-xs mb-6">

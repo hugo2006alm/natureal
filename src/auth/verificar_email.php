@@ -11,7 +11,7 @@
 </head>
 <body>
     
-<div class="card w-96 bg-base-100 shadow-xl flex justify-center h-screen">
+<div class="card w-screen bg-base-100 shadow-xl flex justify-center h-screen">
         <figure class="px-10 pt-10 ">
             <img src="../../imgs/bird2.jpg" alt="Shoes" class="rounded-xl h-64" />
         </figure>

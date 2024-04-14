@@ -1,6 +1,3 @@
-<?php
-include '../include/config.inc.php';
-?>
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
 <link rel="stylesheet" href="../output.css">
@@ -12,9 +9,9 @@ include '../include/config.inc.php';
 </head>
 
 <body>
-    <div class="card w-96 bg-base-100 shadow-xl flex justify-center h-screen">
+    <div class="card bg-base-100 shadow-xl flex justify-center h-screen w-screen">
         <figure class="px-10 pt-10 ">
-            <img src="../../imgs/bird.jpg" alt="Shoes" class="rounded-xl h-64" />
+            <img src="../../imgs/bird.jpg" alt="Bird" class="rounded-xl h-64" />
         </figure>
         <div class="card-body items-center text-center">
             <h2 class="card-title mb-6">NatuReal</h2>
@@ -27,7 +24,7 @@ include '../include/config.inc.php';
                     <button type="submit" class="btn btn-primary w-[45%] mb-3">Entrar</button>
                     <a href="registo.php" class="btn btn-outline w-[45%] mb-3">Criar Conta</a>
                 </div>
-                <a href="recuperar_senha.php" class="link">Esqueci-me palavra-passe</a>
+                <a href="recuperar_senha.php" class="link">Esqueci-me da palavra-passe</a>
             </form>
         </div>
     </div>
