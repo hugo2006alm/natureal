@@ -22,7 +22,7 @@
                     <span class="inline">
                         Tema
                     </span>
-                    <input id="theme" type="checkbox" value="forest" class="checkbox theme-controller"/>
+                    <input id="theme" type="checkbox" value="sunset" class="checkbox theme-controller"/>
                 </div>
             </li>
             <li><a href="<?php echo $arrConfig['url_site'].'/settings.php' ?>">Definições</a></li>

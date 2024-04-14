@@ -26,12 +26,12 @@
 
             if ($likes_user[0]['idpost'] == $v['id']) {
                 echo '
-        <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
+        <div class="card w-80 bg-base-100 snap-center" id="p' . $v['id'] . '">
             <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
-            <div class="card-body flex justify-center items-center">
+            <div class="card-body border border-primary flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
-                    <div class="badge '.$cor.'">' . $raridade . '</div>
+                    <div class="badge text-black '.$cor.'">' . $raridade . '</div>
                 </h2>
                 <p>' . $v['legenda'] . '</p>
                 <div class="card-actions justify-between items-center w-full">
@@ -50,12 +50,12 @@
         </div>';
             } else {
                 echo '
-        <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
+        <div class="card w-80 bg-base-100 snap-center" id="p' . $v['id'] . '">
             <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
-            <div class="card-body flex justify-center items-center">
+            <div class="card-body border border-primary flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
-                    <div class="badge badge-secondary">' . $raridade . '</div>
+                    <div class="badge text-black '.$cor.'">' . $raridade . '</div>
                 </h2>
                 <p>' . $v['legenda'] . '</p>
                 <div class="card-actions justify-between items-center w-full">
@@ -75,12 +75,12 @@
             }
         } else {
             echo '
-        <div class="card w-80 bg-base-100 shadow-xl snap-center" id="p' . $v['id'] . '">
+        <div class="card w-80 bg-base-100 snap-center" id="p' . $v['id'] . '">
             <figure><img class="w-full" src="' . $img . '" alt="" /></figure>
-            <div class="card-body flex justify-center items-center">
+            <div class="card-body border border-primary flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
-                    <div class="badge badge-secondary">' . $raridade . '</div>
+                    <div class="badge text-black '.$cor.'">' . $raridade . '</div>
                 </h2>
                 <p>' . $v['legenda'] . '</p>
                 <div class="card-actions justify-between items-center w-full">
