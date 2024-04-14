@@ -11,7 +11,7 @@ $arrConfig['dbname'] = 'freedb_natureal';
 $arrConfig['isLoginKey'] = 'aajbajkh%/rcKI!ª~uaca76';
 
 $arrConfig['url_site'] = 'http://' . $_SERVER["HTTP_HOST"] . '/src';
-$arrConfig['dir_site'] = '/var/www/natureal'; 
+$arrConfig['dir_site'] = '/Applications/XAMPP/xamppfiles/htdocs/natureal/src'; 
 $arrConfig['url_paginas'] = $arrConfig['url_site'] . '/pages/';
 $arrConfig['url_modules'] = $arrConfig['url_site'] . '/modules/';
 $arrConfig['dir_modules'] = $arrConfig['dir_site'] . '/modules/';
