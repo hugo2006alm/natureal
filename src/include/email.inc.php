@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once $arrConfig['dir_site'] . '/vendor/autoload.php';
+require_once $arrConfig['dir_site'] . '/../vendor/autoload.php';
 
 function enviar_convite_curso($to, $url, $cargo, $curso) {
     $html = '<!DOCTYPE html>

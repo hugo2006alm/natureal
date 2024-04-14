@@ -61,7 +61,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #1 <div class="badge bg-zinc-400 text-black">Comum</div></div>
+            <div class="stat-title">Objetivo #1 <div class="badge text-black bg-zinc-400 font-semibold">Comum</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[0]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[0]['nomeespecie'] ?></div>
         </div>
@@ -76,7 +76,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #2 <div class="badge bg-emerald-400 text-black">Raro</div></div>
+            <div class="stat-title">Objetivo #2 <div class="badge text-black bg-emerald-400 font-semibold">Raro</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[1]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[1]['nomeespecie'] ?></div>
         </div>
@@ -91,7 +91,7 @@ if (isset($_GET['erro'])){
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400 text-black">Lendário</div></div>
+            <div class="stat-title">Objetivo #3 <div class="badge text-black bg-yellow-400 font-semibold">Lendário</div></div>
             <div class="stat-value text-primary font-semibold text-base"><?php echo $query[2]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[2]['nomeespecie'] ?></div>
         </div>
