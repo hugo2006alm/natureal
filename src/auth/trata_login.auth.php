@@ -7,7 +7,7 @@ $sql = 'SELECT id, password FROM user WHERE username = "'.$_POST['login'].'" OR 
 $res = my_query($sql);
 
 
-
+//a
 if(count($res) == 0) { //Significa que o user nao existe
   //  echo json_encode(['status' => 'error', 'msg' => 'Utilizador não encontrado']);
     header('Location: login.php?erro=1');
