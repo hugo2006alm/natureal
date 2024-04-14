@@ -89,3 +89,5 @@ typings/
 
 # Tailwind CSS build output
 src/output.css
+src/include/config.inc.php
+src/include/config.inc.php

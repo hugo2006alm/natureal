@@ -29,7 +29,7 @@
             }
 
         }
-if ($_POST['password'] != $user[0]['password']){   
+if ($_POST['password'] !=""){   
     $pass = password_hash($_POST['password'], PASSWORD_DEFAULT); 
         my_query('UPDATE user SET password =  "'. $pass .'" WHERE id = '. $user_id);
 
