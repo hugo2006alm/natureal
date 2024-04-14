@@ -13,6 +13,7 @@
             // title.classList.add('hidden');
             countdownBottom.classList.add('opacity-0');
             countdownBottom.classList.add('-z-10');
+            countdownBottom.classList.remove('z-10');
             countdownTop.classList.remove('opacity-0');
             // countdownTop.classList.remove('hidden');
             throw new Error("Stop execution");
@@ -24,6 +25,7 @@
                 // title.classList.add('hidden');
                 countdownBottom.classList.add('opacity-0');
                 countdownBottom.classList.add('-z-10');
+                countdownBottom.classList.remove('z-10');
                 countdownTop.classList.remove('opacity-0');
                 // countdownTop.classList.remove('hidden');
                 
@@ -32,6 +34,7 @@
                 // title.classList.remove('hidden');
                 countdownBottom.classList.remove('opacity-0');
                 countdownBottom.classList.remove('-z-10');
+                countdownBottom.classList.add('z-10');
                 countdownTop.classList.add('opacity-0');
                 // countdownTop.classList.add('hidden');
             }
