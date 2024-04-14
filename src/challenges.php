@@ -26,7 +26,7 @@ if ($queryverificar[0]['total']>2){
 ?>
 
 <div class="w-screen flex flex-col justify-center items-center">
-    <h1 class="text-primary text-4xl font-bold mt-6">Objetivos do dia</h1><br>
+    <h1 class="text-primary text-4xl font-black mt-6">Objetivos do dia</h1><br>
 
     <?php
 
@@ -37,41 +37,47 @@ if ($queryverificar[0]['total']>2){
 
     <div class="stats stats-vertical shadow">
         <div class="stat">
-            <div class="stat-figure text-primary">
-                <div class="avatar">
+            <div class="stat-figure">
+                <div class="avatar pl-10">
                     <div class="w-16 rounded-sm">
-                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[0]['foto'] ?>" />
+                        <a href="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[0]['foto'] ?>" data-lightbox="image" data-title="<?php echo $query[0]['titulo'] ?>">
+                            <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[0]['foto'] ?>" />
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="stat-title">Objetivo #1 <div class="badge bg-grey-400">Normal</div></div>
-            <div class="stat-value text-primary"><?php echo $query[0]['titulo'] ?></div>
+            <div class="stat-value text-primary font-semibold text-base"><?php echo $query[0]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[0]['nomeespecie'] ?></div>
         </div>
 
         <div class="stat">
-            <div class="stat-figure text-secondary">
+            <div class="stat-figure">
                 <div class="avatar">
                     <div class="w-16 rounded-sm">
-                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[1]['foto'] ?>" />
+                        <a href="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[1]['foto'] ?>" data-lightbox="image" data-title="<?php echo $query[1]['titulo'] ?>">
+                            <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[1]['foto'] ?>" />
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="stat-title">Objetivo #2 <div class="badge bg-blue-400">Raro</div></div>
-            <div class="stat-value text-primary"><?php echo $query[1]['titulo'] ?></div>
+            <div class="stat-value text-primary font-semibold text-base"><?php echo $query[1]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[1]['nomeespecie'] ?></div>
         </div>
 
         <div class="stat">
-            <div class="stat-figure text-secondary">
+            <div class="stat-figure">
                 <div class="avatar">
                     <div class="w-16 rounded-sm">
-                        <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[2]['foto'] ?>" />
+                        <a href="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[2]['foto'] ?>" data-lightbox="image" data-title="<?php echo $query[2]['titulo'] ?>">
+                            <img src="<?php echo $arrConfig['url_site'].'/uploads/tarefas/'. $query[2]['foto'] ?>" />
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400">Legendário</div></div>
-            <div class="stat-value text-primary"><?php echo $query[2]['titulo'] ?></div>
+            <div class="stat-title">Objetivo #3 <div class="badge bg-yellow-400">Lendário</div></div>
+            <div class="stat-value text-primary font-semibold text-base"><?php echo $query[2]['titulo'] ?></div>
             <div class="stat-desc"><?php echo $query[2]['nomeespecie'] ?></div>
         </div>
     </div>
