@@ -1,21 +1,64 @@
-
-
 <div class="w-screen flex flex-col justify-center items-center [&>*]:mb-3 last:mb-0 snap-mandatory snap-y overflow-auto">
 
-    <?php
-    $query = my_query("SELECT * FROM posts ORDER BY id DESC LIMIT 20");
-    foreach ($query as $k => $v) {
-        $query2 = my_query("SELECT * FROM tarefas WHERE id = " . $v['idtarefa']);
-        if ($query2[0]['nivel'] == 1) {
-            $raridade = "Comum";
-            $cor = "bg-zinc-400";
-        } else if ($query2[0]['nivel'] == 2) {
-            $raridade = "Raro";
-            $cor = "bg-emerald-400";
-        } else if ($query2[0]['nivel'] == 3) {
-            $raridade = "Lendário";
-            $cor = "bg-yellow-400";
-        }
+<?php 
+$flag_ja_buscou_os_posts = false;
+$query = my_query("SELECT * FROM posts ORDER BY id DESC LIMIT 20"); 
+
+?>
+
+<script>
+    $.ajax({
+        url: '<?php echo $arrConfig['url_site'] ?>/posts/fetch_post.php',
+        type: 'GET',
+        success: function(data) {
+            var skeleton = document.getElementById('skeleton');
+            skeleton.style.display = 'none';
+            var posts = JSON.parse(data);
+            console.log(posts);            
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+        console.log('Error: ' + textStatus + ' ' + errorThrown);
+    }
+    })
+
+</script>
+
+<?php
+
+echo '
+
+<div id="skeleton" class="flex flex-col gap-4">
+    
+    <div class="flex flex-col items-center gap-4">
+        <div class="skeleton h-96 w-80"></div>
+        <div class="skeleton h-4 w-36"></div>
+        <div class="skeleton h-4 w-full"></div>
+        <div class="skeleton h-4 w-full"></div>
+        <div class="skeleton h-4 w-36"></div>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+        <div class="skeleton h-96 w-80"></div>
+        <div class="skeleton h-4 w-36"></div>
+        <div class="skeleton h-4 w-full"></div>
+        <div class="skeleton h-4 w-full"></div>
+        <div class="skeleton h-4 w-36"></div>
+    </div>
+    
+    
+</div>
+
+';
+
+
+foreach($query as $k => $v) {
+    $query2 = my_query("SELECT * FROM tarefas WHERE id = ".$v['idtarefa']);
+    if ($query2[0]['nivel']== 1) {
+        $raridade = "Comum";
+    } else if ($query2[0]['nivel']== 2) {
+        $raridade = "Raro";
+    } else if ($query2[0]['nivel']== 3) {
+        $raridade = "Épico";
+    } 
 
         $query3 = my_query("SELECT * FROM user WHERE id = " . $v['iduser']);
         $likes_user = my_query("SELECT * FROM likes WHERE iduser = " . $_SESSION['user_id'] . " AND idpost = " . $v['id'] . " ORDER BY idpost DESC");
@@ -98,9 +141,10 @@
             </div>
         </div>';
         }
+    
     }
-
     ?>
+
     <script>
         function likee(iduserr, idpostt) {
             console.log(iduserr, idpostt);
@@ -193,3 +237,4 @@
         }
     </script>
 </div>
+    </div>
