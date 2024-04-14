@@ -131,4 +131,4 @@ if (!isset($_SESSION['user_id'])) {
 
 <!-- <body class="min-w-screen min-h-screen bg-base-100" onload = "getLocationConstant()"> -->
 <body class="min-w-screen min-h-screen bg-base-100">
-    <?php include 'components/top_nav.php'; include 'components/countdown.php'; ?>
+    <?php include 'components/top_nav.php'; ?>

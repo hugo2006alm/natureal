@@ -39,63 +39,37 @@ if ($_POST['password'] != $user[0]['password']){
         
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
-</head>
-<body>
-    <form action="settings.php" method="POST" enctype="multipart/form-data">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['username']); ?>">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['nome']); ?>">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required  value="<?php echo htmlspecialchars($user[0]['email']); ?>">
-        <label for="password">Password:</label>
-        <input type="password" name="password" required  value="<?php echo htmlspecialchars($user[0]['password']); ?>">
-        <label for="photo">Foto:</label>
-        <img src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="" style="max-width:100px">
-        <input type="file" name="photo">
-        <button type="submit">Submeter</button>
+    <div class="w-screen flex flex-col justify-center items-center mb-7">
+        <h1 class="text-primary text-4xl font-black mt-6">Definições</h1>
+        <h2 class="text-primary text-2xl font-bold mt-6">Editar Conta</h2>
+    </div>
+    <form action="settings.php" method="POST" enctype="multipart/form-data" class="flex flex-col justify-center items-center w-screen [&>*]:mb-3 last:mb-0">
+        <input class="input input-bordered w-full max-w-xs" placeholder="Username" type="text" name="username" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['username']); ?>">
+        <input class="input input-bordered w-full max-w-xs" placeholder="Nome" type="text" name="nome" required maxlength="30" value="<?php echo htmlspecialchars($user[0]['nome']); ?>">
+        <input class="input input-bordered w-full max-w-xs" placeholder="Email" type="email" name="email" required  value="<?php echo htmlspecialchars($user[0]['email']); ?>">
+        <input class="input input-bordered w-full max-w-xs" placeholder="Password" type="password" name="password" required  value="<?php echo htmlspecialchars($user[0]['password']); ?>">
+        <img id="file-image" src="<?php echo $arrConfig['url_site'] .'/uploads/'. $user[0]['foto']?>" alt="" class="max-w-xs rounded-md">
+        <input id="file" class="file-input file-input-bordered w-full max-w-xs" type="file" name="photo">
+        <button class="btn btn-primary w-full max-w-xs" type="submit">Submeter</button>
     </form>
-    <form action="end.php" method="POST">
-        <button type="submit">Terminar Sessão</button>
+    <form action="end.php" method="POST" class="flex flex-col justify-center items-center w-screen">
+        <button class="btn btn-link" type="submit">Terminar Sessão</button>
     </form>
 
-    <?php include 'components/bottom_nav.php';?>
-</body>
-<script>
-    var title = document.getElementById("title");
-    var countdownBottom = document.getElementById("countdown-bottom");
-    var countdownTop = document.getElementById("countdown-top");
+    <script>
+        document.getElementById('file').addEventListener('change', function() {
+            var file = this.files[0];
+            var fileimage = document.getElementById('file-image');
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    fileimage.src = reader.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
     
-   /*  if (!location.pathname.includes('/index.php') && !location.pathname.endsWith('src/')) {
-        title.classList.add('opacity-0');
-        // title.classList.add('hidden');
-        countdownBottom.classList.add('opacity-0');
-        countdownTop.classList.remove('opacity-0');
-        // countdownTop.classList.remove('hidden');
-        throw new Error("Stop execution");
-    }
- */
-
-    window.addEventListener("scroll", function() {
-        if (this.pageYOffset > 0) {
-            title.classList.add('opacity-0');
-            // title.classList.add('hidden');
-            countdownBottom.classList.add('opacity-0');
-            countdownTop.classList.remove('opacity-0');
-            // countdownTop.classList.remove('hidden');
-        } else {
-            title.classList.remove('opacity-0');
-            // title.classList.remove('hidden');
-            countdownBottom.classList.remove('opacity-0');
-            countdownTop.classList.add('opacity-0');
-            // countdownTop.classList.add('hidden');
-        }
-    });
-</script>
-</html>
+<?php
+    include 'components/footer.php';
+?>

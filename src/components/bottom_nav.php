@@ -7,6 +7,7 @@
 // echo "_";
 // echo (basename($_SERVER['PHP_SELF']) == "index.php");
 // die();
+include 'components/countdown.php';
 ?>
 
 <div class="btm-nav bg-base-100 text-primary transition-all" id="bottom-nav">

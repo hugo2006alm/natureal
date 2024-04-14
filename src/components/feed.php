@@ -8,10 +8,13 @@
         $query2 = my_query("SELECT * FROM tarefas WHERE id = " . $v['idtarefa']);
         if ($query2[0]['nivel'] == 1) {
             $raridade = "Comum";
+            $cor = "bg-zinc-400";
         } else if ($query2[0]['nivel'] == 2) {
             $raridade = "Raro";
+            $cor = "bg-emerald-400";
         } else if ($query2[0]['nivel'] == 3) {
-            $raridade = "Épico";
+            $raridade = "Lendário";
+            $cor = "bg-yellow-400";
         }
 
         $query3 = my_query("SELECT * FROM user WHERE id = " . $v['iduser']);
@@ -28,7 +31,7 @@
             <div class="card-body flex justify-center items-center">
                 <h2 class="card-title">
                 ' . $v['titulo'] . '
-                    <div class="badge badge-secondary">' . $raridade . '</div>
+                    <div class="badge '.$cor.'">' . $raridade . '</div>
                 </h2>
                 <p>' . $v['legenda'] . '</p>
                 <div class="card-actions justify-between items-center w-full">
