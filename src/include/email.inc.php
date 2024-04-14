@@ -3,8 +3,10 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+require_once $arrConfig['dir_site'] . '/vendor/autoload.php';
+
 $arrConfig['dir_site'] . '/vendor/autoload.php';
-/*
+
 function enviar_convite_curso($to, $url, $cargo, $curso) {
     $html = '<!DOCTYPE html>
     <html lang="en">
@@ -102,7 +104,7 @@ function enviar_email($to, $nome, $assunto, $alt_body, $html){
         $mail->Password   = $pass;                        
         $mail->SMTPSecure = 'ssl';                              
         $mail->Port       = 465;       
-        $mail->setFrom( $user, 'Educse');           
+        $mail->setFrom( $user, 'NatuReal');           
         $mail->addAddress($to, $nome);                  
         $mail->isHTML(true);                                  
         $mail->Subject = $assunto;
@@ -115,4 +117,3 @@ function enviar_email($to, $nome, $assunto, $alt_body, $html){
     }
 
 };
-*/

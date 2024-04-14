@@ -2,14 +2,14 @@
 echo isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lofi">
+<link rel="stylesheet" href="../output.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 </head>
 <body>
-    
     <form method="post" action="trata_registo.auth.php">
         <input required type="text" name="nome" id="nome" placeholder="Nome">
         <input required type="text" name="user" id="user" placeholder="User">
