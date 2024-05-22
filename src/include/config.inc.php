@@ -3,10 +3,10 @@
 global $arrConfig;
 
 
-$arrConfig['servername'] = 'sql.freedb.tech';
-$arrConfig['username'] = 'freedb_natureal';
-$arrConfig['password'] = 'TtQfPe6PmHUBH!9';
-$arrConfig['dbname'] = 'freedb_natureal';
+$arrConfig['servername'] = '';
+$arrConfig['username'] = '';
+$arrConfig['password'] = '';
+$arrConfig['dbname'] = '';
 
 $arrConfig['isLoginKey'] = 'aajbajkh%/rcKI!ª~uaca76';
 
